@@ -124,13 +124,13 @@
 }
 
 @keyframes top {
-	20%,
+	40%,
 	80% {
 		transform: rotateX(180deg);
 		z-index: -1;
 	}
 
-	100% {
+	84%, 95% {
 		transform: rotateX(0);
 		z-index: 0;
 	}
@@ -159,7 +159,7 @@
 		top: -20px;
 		transform: scale(1);
 	}
-	85% {
+	80% {
 		top: 100px;
 	}
 }
