@@ -1,0 +1,74 @@
+@import './animation-1';
+@import './animation-2';
+@import './animation-3';
+@import './animation-4';
+@import './animation-5';
+@import './animation-6';
+@import './animation-7';
+@import './animation-8';
+
+body{
+    background-color:black;
+}
+
+.main-container{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(250px, 400px));
+    gap:20px;
+    .animation-container{
+        border: 1px solid rgb(47, 47, 47);
+        border-radius: 1rem;
+        height: 250px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem;
+
+        .dots-container, 
+        .square-container, 
+        .cards-container, 
+        .circle-container,
+        .objects-container,
+        .letter-container{
+            position: relative;
+            .go-checkbox{
+                position: absolute;
+                opacity: 0;
+            }
+            .go{
+               
+                position: absolute;
+                bottom:-4rem;
+                left: calc(50% - 2.5rem);
+                border-radius: 0.5rem;
+                width: 70px;
+                height: 30px;
+                text-align: center;
+                border: 1px solid rgb(41, 41, 41);
+                background-color: transparent;
+                color:rgb(41, 41, 41);
+                transition: 0.3s;
+                &:before{
+                    position: absolute;
+                    content: 'PLAY';
+                    top:7px;
+                    left: 15px;
+                }
+
+                &:hover{
+                    cursor:pointer;
+                    transition: 0.3s;
+                    transform: scale(1.2);
+		            opacity: 0.7;
+                }
+            }
+            .go-checkbox:checked {
+                ~ .go::before {
+                    content: 'STOP';
+                    color:#555;
+                }
+            }
+        }
+    }
+}
+

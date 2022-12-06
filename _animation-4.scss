@@ -1,0 +1,94 @@
+.animation-container:nth-child(4) {
+	.cards-container {
+		position: relative;
+		width: 250px;
+		height: 200px;
+		.go-checkbox {
+			position: absolute;
+			opacity: 0;
+		}
+
+		.go-checkbox:checked {
+			~ .go {
+				color: rgb(231, 49, 106);
+				border-color: rgb(231, 49, 106);
+				opacity: 0.7;
+			}
+			~ .card {
+				animation-play-state: running;
+			}
+		}
+		.card {
+			position: absolute;
+			left: 0;
+			top: 20%;
+			display: flex;
+			flex-direction: column;
+			gap: 7px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgb(174, 36, 36);
+			width: 80px;
+			height: 110px;
+			border-radius: 5px;
+			overflow: hidden;
+			animation-iteration-count: infinite;
+			animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			animation-name: card-anim;
+			animation-duration: 3s;
+			animation-play-state: paused;
+
+			.card__header {
+				height: 30px;
+				width: 100%;
+				margin: 0 auto;
+				background-color: rgb(193, 89, 110);
+			}
+			.card__stripe {
+				position: relative;
+				transform: translateX(7px);
+				height: 7px;
+				background-color: rgb(194, 194, 194);
+			}
+
+			.card__stripe:nth-child(2) {
+				width: 20px;
+			}
+			.card__stripe:nth-child(3) {
+				width: 40px;
+			}
+			.card__stripe:nth-child(4) {
+				width: 60px;
+			}
+			.card__stripe:nth-child(5) {
+				width: 40px;
+			}
+			.card__stripe:nth-child(6) {
+				width: 50px;
+			}
+		}
+
+		.card:nth-child(4) {
+			animation-delay: 1s;
+		}
+		.card:nth-child(3) {
+			animation-delay: 2s;
+		}
+	}
+}
+
+@keyframes card-anim {
+	33% {
+		transform: translate(90px, 0px) scale(2);
+		z-index: 20;
+		opacity: 1;
+	}
+	66% {
+		transform: translate(180px, 0) scale(1);
+		z-index: 10;
+		opacity: 0.5;
+	}
+	100% {
+		transform: translate(0px, 0);
+		z-index: 15;
+	}
+}

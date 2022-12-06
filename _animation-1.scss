@@ -1,0 +1,83 @@
+.animation-container:first-child {
+	.dots-container {
+		position: relative;
+		width: 100px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		.go-checkbox:checked {
+			~ .go {
+				border-color: chartreuse;
+			}
+			~ .dot {
+				background-color: chartreuse;
+				animation-play-state: running;
+			}
+		}
+	}
+
+	.dot {
+		position: relative;
+		left: 50%;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: rgb(30, 30, 30);
+		animation-name: dot1, color1;
+		animation-play-state: paused;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
+	.dot:nth-child(3) {
+		animation-duration: 1.1s;
+	}
+	.dot:nth-child(4) {
+		animation-duration: 1.2s;
+	}
+	.dot:nth-child(5) {
+		animation-duration: 1.3s;
+	}
+	.dot:nth-child(6) {
+		animation-duration: 1.4s;
+	}
+	.dot:nth-child(7) {
+		animation-duration: 1.5s;
+	}
+	.dot:nth-child(8) {
+		animation-duration: 1.6s;
+	}
+	.dot:nth-child(9) {
+		animation-duration: 1.7s;
+	}
+	.dot:nth-child(10) {
+		animation-duration: 1.8s;
+	}
+	.dot:nth-child(11) {
+		animation-duration: 1.9s;
+	}
+}
+
+@keyframes dot1 {
+	25% {
+		left: 100%;
+	}
+	50% {
+		left: 50%;
+	}
+	75% {
+		left: 0%;
+	}
+	100% {
+		left: 50%;
+	}
+}
+
+@keyframes color1 {
+	50% {
+		background-color: chartreuse;
+	}
+	100% {
+		background-color: #fff;
+	}
+}
